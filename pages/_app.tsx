@@ -1,7 +1,18 @@
-import '../styles/globals.css'
-import type { AppProps } from 'next/app'
+import type { AppProps } from 'next/app';
+import Head from 'next/head';
 
-function MyApp({ Component, pageProps }: AppProps) {
-  return <Component {...pageProps} />
+import GlobalStyle from '@/styles/index';
+
+function MyApp({ Component, pageProps }: AppProps): JSX.Element {
+  return (
+    <>
+      <Head>
+        <title>Marcos Moura.</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+      </Head>
+      <GlobalStyle />
+      <Component {...pageProps} />
+    </>
+  );
 }
-export default MyApp
+export default MyApp;
