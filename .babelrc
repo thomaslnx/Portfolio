@@ -3,6 +3,7 @@
     "next/babel"
   ],
   "plugins": [
+    ["styled-jsx/babel", { "optimizedForSpeed": true}],
     [
       "module-resolver", {
         "root": ["./src"],

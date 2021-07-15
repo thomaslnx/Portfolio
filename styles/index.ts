@@ -5,7 +5,7 @@ const GlobalStyle = createGlobalStyle`
     --primary-background-color: #141516;
   }
 
-  *, html, body {
+  *, html, body, #__next {
     margin: 0;
     padding: 0;
     outline: 0;
