@@ -1,6 +1,42 @@
 import { createGlobalStyle } from 'styled-components';
 
 const GlobalStyle = createGlobalStyle`
+  /*
+  ** ## spacing and typescale
+  */
+ :root {
+    // spacing
+    // base font size: 19px
+    // vertical space unit : 32px
+
+    --base-size      : 62.5%;
+    --multiplier     : 1;
+    --base-font-size : calc(1.9rem * var(--multiplier));
+    --space          : calc(3.2rem * var(--multiplier));
+
+    /* vertical spacing
+      */
+    --vspace-0_125 : calc(0.125 * var(--space));
+    --vspace-0_25  : calc(0.25 * var(--space));
+    --vspace-0_375 : calc(0.375 * var(--space));
+    --vspace-0_5   : calc(0.5 * var(--space));
+    --vspace-0_625 : calc(0.625 * var(--space));
+    --vspace-0_75  : calc(0.75 * var(--space));
+    --vspace-0_875 : calc(0.875 * var(--space));
+    --vspace-1     : calc(var(--space));
+    --vspace-1_25  : calc(1.25 * var(--space));
+    --vspace-1_5   : calc(1.5 * var(--space));
+    --vspace-1_75  : calc(1.75 * var(--space));
+    --vspace-2     : calc(2 * var(--space));
+    --vspace-2_5   : calc(2.5 * var(--space));
+    --vspace-3     : calc(3 * var(--space));
+    --vspace-3_5   : calc(3.5 * var(--space));
+    --vspace-4     : calc(4 * var(--space));
+    --vspace-4_5   : calc(4.5 * var(--space));
+    --vspace-5     : calc(5 * var(--space));
+ }
+
+
 
   /* ---------------------------------------------------------
   ** ## colors
@@ -39,6 +75,9 @@ const GlobalStyle = createGlobalStyle`
     --color-preloader-b : var(--color-gray-10);
     --color-loader      : var(--color-white);
     --color-loader-light: rgba(255,255,255, 0.1);
+
+    // others colors
+    --color-body: var(--color-gray-10);
   }
 
   *, html, body, #__next {

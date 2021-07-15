@@ -29,7 +29,16 @@ module.exports = {
       1,
       { extensions: ['.ts', '.tsx', '.js', '.jsx'] },
     ],
-    'import/extensions': 1,
+    'import/extensions': [
+      'error',
+      'ignorePackages',
+      {
+        ts: 'never',
+        tsx: 'never',
+        js: 'never',
+        jsx: 'never',
+      },
+    ],
     'import/no-unresolved': 'off',
     'import/namespace': 'off',
     'import/no-duplicates': 'off',
