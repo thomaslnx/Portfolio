@@ -41,7 +41,7 @@ export default class MyDocument extends Document {
 
   render(): ReactElement {
     return (
-      <Html lang="en">
+      <Html lang="en" className="js ss-preload">
         <Head>
           <meta
             name="description"
@@ -55,7 +55,7 @@ export default class MyDocument extends Document {
           <link rel="icon" type="image/png" href="favicon.png" />
           <link rel="manifest" href="site.webmanifest" />
         </Head>
-        <body>
+        <body id="top">
           <Main />
           <NextScript />
         </body>

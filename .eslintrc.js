@@ -45,6 +45,8 @@ module.exports = {
       'error',
       { functions: false, classes: false, variables: true },
     ],
+    'no-useless-return': 'off',
+    'react/jsx-pascal-case': 'off',
   },
   settings: {
     'import/resolver': {
