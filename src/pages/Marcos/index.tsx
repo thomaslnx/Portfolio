@@ -11,7 +11,7 @@ export default function Marcos(): JSX.Element {
         easing: 'easeInOutCubic',
         duration: 800,
         autoplay: false,
-        delay: 5000,
+        // delay: 5000,
       })
       .add({
         targets: '.circles span',
@@ -24,9 +24,12 @@ export default function Marcos(): JSX.Element {
             delay: anime.stagger(100, { direction: 'reverse' }),
           },
         ],
+        delay: anime.stagger(100, { direction: 'reverse' }),
       });
 
-    timeLine.play();
+    // Correct lately the time from begin circles animation, for now
+    // will be continued that way.
+    setTimeout(timeLine.play, 5000);
   }, []);
 
   return (
