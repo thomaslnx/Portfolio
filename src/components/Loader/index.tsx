@@ -7,8 +7,8 @@ import { Preloader, Loading } from './styles';
 export default function Loader(): JSX.Element {
   const preloadRef = useRef(null);
 
-  const [visibility, setVisibility] = useState<string>('visible');
-  const [display, setDisplay] = useState<string | ''>('');
+  const [visibility, setVisibility] = useState<'visible' | 'hidden'>('visible');
+  const [display, setDisplay] = useState<'none' | 'flex'>('flex');
 
   useEffect(() => {
     const timeLine = anime
@@ -65,7 +65,8 @@ export default function Loader(): JSX.Element {
       <Preloader
         id="preloader"
         ref={preloadRef}
-        style={{ display: `${display}` }}
+        display={display}
+        visibility={visibility}
       >
         <Loading id="loader" />
       </Preloader>

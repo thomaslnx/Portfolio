@@ -2,19 +2,15 @@ import styled from 'styled-components';
 
 export const Preloader = styled.div`
   position: fixed;
-  display: flex;
+  display: ${(props) => (props.display === '' ? 'flex' : props.display)};
   flex-flow: row wrap;
   justify-content: center;
   align-items: center;
   background: var(--color-body);
-  z-index: 500;
   height: 100vh;
   width: 100%;
   opacity: 1;
-
-  #preloader {
-    display: none;
-  }
+  visibility: ${(props) => props.visibility || 'hidden'};
 `;
 
 export const Loading = styled.div`

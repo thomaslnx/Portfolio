@@ -44,6 +44,9 @@ const GlobalStyle = createGlobalStyle`
   :root {
     --primary-background-color: #141516;
 
+    --color-1 : hsla(36, 72%, 70%, 1);
+    --color-2 : hsla(168, 62%, 36%, 1);
+
     /* shades
      * generated using
      * Tint & Shade Generator
@@ -83,11 +86,11 @@ const GlobalStyle = createGlobalStyle`
   *, html, body, #__next {
     margin: 0;
     padding: 0;
-    outline: 0;
-    font-smooth: anti-aliased;
+    outline: none !important;
   }
 
   body {
+    font-smooth: antialiased;
     background-color: var(--primary-background-color);
   }
 
