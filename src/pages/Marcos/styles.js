@@ -5,11 +5,12 @@ export const Container = styled.div`
 `;
 
 export const PageContent = styled.div`
-  --circle-width: 70vw;
-  --header-height: 6.4rem;
   display: flex;
   flex-direction: column;
   height: 100%;
   overflow: hidden;
   position: relative;
 `;
+
+// --circle-width: 70vw;
+// --header-height: 6.4rem;
