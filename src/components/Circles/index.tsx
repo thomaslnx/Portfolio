@@ -27,7 +27,7 @@ const Circles: React.FC = (): JSX.Element => {
 
     // Correct lately the time from begin circles animation, for now
     // will be continued that way.
-    setTimeout(timeLine.play, 5000);
+    setTimeout(timeLine.play, 5500);
   }, []);
 
   return (

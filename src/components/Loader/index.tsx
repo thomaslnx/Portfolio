@@ -20,7 +20,7 @@ const Loader: React.FC = (): JSX.Element => {
       .add({
         targets: '#loader',
         opacity: 0,
-        duration: 5000,
+        duration: 4000,
         begin: (anim) => {
           window.scrollTo(0, 0);
         },

@@ -1,15 +1,8 @@
 import { createGlobalStyle } from 'styled-components';
 
 const GlobalStyle = createGlobalStyle`
-/* ------------------------
-** ## spacing and typescale
-*  ------------------------
-*/
-:root {
-  // spacing
-  // base font size: 19px
-  // vertical space unit : 32px
 
+:root {
   --base-size      : 62.5%;
   --multiplier     : 1;
   --base-font-size : calc(1.9rem * var(--multiplier));
@@ -18,8 +11,6 @@ const GlobalStyle = createGlobalStyle`
   --circle-width: 70vw;
   --header-height: 6.4rem;
 
-  /* vertical spacing
-    */
   --vspace-0_125 : calc(0.125 * var(--space));
   --vspace-0_25  : calc(0.25 * var(--space));
   --vspace-0_375 : calc(0.375 * var(--space));
@@ -52,19 +43,7 @@ const GlobalStyle = createGlobalStyle`
   --text-display-2   : calc(var(--text-display-1) * var(--text-scale-ratio));
   --text-display-3   : calc(var(--text-display-2) * var(--text-scale-ratio));
 
-  // default button height
-
   --vspace-btn : var(--vspace-2);
-}
-
-
-/* -------------------------------------------------------------------
-* ## grid variables
-* -------------------------------------------------------------------
-*/
-:root {
-
-  // widths for rows and containers
 
   --width-full     : 100%;
   --width-max      : 1200px;
@@ -75,22 +54,12 @@ const GlobalStyle = createGlobalStyle`
   --width-narrower : 800px;
   --width-grid-max : var(--width-max);
 
-  /* gutter
-    */
   --gutter : 2rem;
-}
 
-/* ---------------------------------------------------------
-** ## colors
-* ---------------------------------------------------------
-*/
-:root {
   --primary-background-color: #141516;
 
   --color-1 : hsla(36, 72%, 70%, 1);
   --color-2 : hsla(168, 62%, 36%, 1);
-
-// theme color variations
 
   --color-1-lighter : hsla(36, 72%, 90%, 1);
   --color-1-light   : hsla(36, 72%, 80%, 1);
@@ -101,8 +70,6 @@ const GlobalStyle = createGlobalStyle`
   --color-2-dark    : hsla(168, 62%, 26%, 1);
   --color-2-darker  : hsla(168, 62%, 16%, 1);
 
-// feedback colors
-
   --color-error           : hsla(359, 100%, 91%, 1);
   --color-success         : hsla(76, 69%, 68%, 1);
   --color-info            : hsla(205, 82%, 91%, 1);
@@ -112,11 +79,6 @@ const GlobalStyle = createGlobalStyle`
   --color-info-content    : hsla(205, 32%, 31%, 1);
   --color-notice-content  : hsla(51, 30%, 30%, 1);
 
-  /* shades
-    * generated using
-    * Tint & Shade Generator
-    * (https://maketintsandshades.com/)
-    */
   --color-black   : #000000;
   --color-gray-19 : #020202;
   --color-gray-18 : #040404;
@@ -139,14 +101,10 @@ const GlobalStyle = createGlobalStyle`
   --color-gray-1  : #e8e8e8;
   --color-white   : #ffffff;
 
-// text
-
   --color-text        : var(--color-gray-4);
   --color-text-dark   : var(--color-white);
   --color-text-light  : var(--color-gray-7);
   --color-placeholder : var(--color-gray-7);
-
-// buttons
 
   --color-btn                    : var(--color-gray-9);
   --color-btn-text               : var(--color-1);
@@ -161,37 +119,21 @@ const GlobalStyle = createGlobalStyle`
   --color-btn-stroke-hover       : var(--color-white);
   --color-btn-stroke-hover-text  : var(--color-black);
 
-// preloader-colors
-
   --color-preloader-b : var(--color-gray-10);
   --color-loader      : var(--color-white);
   --color-loader-light: rgba(255,255,255, 0.1);
 
-// others colors
   --color-body: var(--color-gray-10);
   --color-border  : rgba(255, 255, 255, .05);
   --border-radius : 3px;
-}
-
-/* -------------------------------------------------------------------
-* ## fonts
-* ------------------------------------------------------------------- */
-
-:root {
 
   --font-1 : "Public Sans", sans-serif;
   --font-2 : "DM Serif Display", serif;
 
-  /* monospace
-  */
+  // monospace
+
   --font-mono : Consolas, "Andale Mono", Courier, "Courier New", monospace;
 }
-
-/*
-* --------------------------------------------------------------------
-* ## large screen devices
-* --------------------------------------------------------------------
-*/
 
   .lg-1 {
       flex  : none;
@@ -267,6 +209,7 @@ const GlobalStyle = createGlobalStyle`
     font-size: var(--base-size);
     box-sizing: border-box;
     line-height: 1.15;
+    -webkit-text-size-adjust: 100%;
   }
 
   *, *::before, *::after {
@@ -275,6 +218,10 @@ const GlobalStyle = createGlobalStyle`
 
   body {
     font-smooth: antialiased;
+    font-family: var(--font-1);
+    font-size: var(--base-font-size);
+    font-weight: 300;
+    color: var(--color-text);
     background-color: var(--primary-background-color);
     -webkit-overflow-scrolling: touch;
     -webkit-text-size-adjust: 100%;
@@ -282,14 +229,7 @@ const GlobalStyle = createGlobalStyle`
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     margin: 0;
-  }
-
-  body {
-    font-family: var(--font-1);
-    font-size: var(--base-font-size);
-    font-weight: 300;
     line-height: var(--vspace-1);
-    color: var(--color-text);
   }
 
   button {
@@ -313,6 +253,34 @@ const GlobalStyle = createGlobalStyle`
   a:active {
     outline: 0;
   }
+
+  h1 {
+    font-size: 2em;
+    margin: 0.67em 0;
+  }
+
+  div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form, p, blockquote, th, td {
+    margin: 0;
+    padding: 0;
+  }
+
+  h1, h2, h3, h4, h5, h6,
+  .h1, .h2, .h3, .h4, .h5, .h6 {
+    font-family: var(--font-2);
+    font-weight: 400;
+    color: var(--color-text-dark);
+    font-variant-ligatures: common-ligatures;
+    text-rendering: optimizeLegibility;
+  }
+
+  h1, .h1 {
+    margin-top: var(--vspace-2_5);
+    margin-bottom: var(--vspace-0_75);
+    font-size: var(--text-display-1);
+    line-height: var(--vspace-2);
+    letter-spacing: -0.01em;
+  }
+
 `;
 
 export default GlobalStyle;
