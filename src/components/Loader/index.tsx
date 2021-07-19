@@ -4,7 +4,7 @@ import _JSXStyle from 'styled-jsx/style';
 
 import { Preloader, Loading } from './styles';
 
-export default function Loader(): JSX.Element {
+const Loader: React.FC = (): JSX.Element => {
   const preloadRef = useRef(null);
 
   const [visibility, setVisibility] = useState<'visible' | 'hidden'>('visible');
@@ -72,4 +72,6 @@ export default function Loader(): JSX.Element {
       </Preloader>
     </>
   );
-}
+};
+
+export default Loader;
