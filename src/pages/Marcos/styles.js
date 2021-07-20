@@ -95,7 +95,6 @@ export const MainContent = styled.main`
     font-weight: 400;
     text-transform: uppercase;
     letter-spacing: 0.3em;
-    -webkit-letter-spacing: 0.3em;
     margin: 0;
     padding: 0 0 0 9.6rem;
     transform: rotate(-90deg) translateX(-50%);

@@ -15,10 +15,13 @@
     "jsx": "preserve",
     "strictNullChecks": true,
     "noImplicitAny": true,
-    "baseUrl": ".",
+    "baseUrl": "./",
     "paths": {
-      "@/styles/*": ["styles/*"],
-      "@/GlobalStyles/*": ["styles/index.ts"]
+      "@styles/*": ["./styles/*"],
+      "@src/*": ["src/*"],
+      "@components/*": ["src/components/*"],
+      "@images/*": ["./public/*"],
+      "@pages/*":["src/pages/*"]
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "**/*.js"],

@@ -1,9 +1,11 @@
 import { useEffect } from 'react';
 import anime from 'animejs';
 
-import Loader from '../../components/Loader';
-import Circles from '../../components/Circles';
-import Header from '../../components/Header';
+import Loader from '@components/Loader';
+import Circles from '@components/Circles';
+import Header from '@components/Header';
+
+// import about from '@public/images/about.jpg';
 
 import { Container, PageContent, MainContent } from './styles';
 
@@ -42,7 +44,7 @@ export default function Marcos(): JSX.Element {
                   <h1 className="text-huge-title">
                     I am Marcos, <br />
                     a tech student, <br />
-                    and junior <br />
+                    & junior <br />
                     Software Engineer <br />
                     based in Brazil.
                   </h1>
@@ -51,10 +53,16 @@ export default function Marcos(): JSX.Element {
                 <ul className="intro-social">
                   <li>
                     <a href="https://instagram.com/thomaslnx">Instagram</a>
+                  </li>
+                  <li>
                     <a href="https://twitter.com/thomaslnx">Twitter</a>
+                  </li>
+                  <li>
                     <a href="https://www.linkedin.com/in/marcos-de-moura-silva/">
                       Linkedin
                     </a>
+                  </li>
+                  <li>
                     <a href="https://github.com/thomaslnx">Github</a>
                   </li>
                 </ul>
@@ -72,6 +80,14 @@ export default function Marcos(): JSX.Element {
                   <path d="M11 21.883l-6.235-7.527-.765.644 7.521 9 7.479-9-.764-.645-6.236 7.529v-21.884h-1v21.883z" />
                 </svg>
               </a>
+            </section>
+
+            <section id="about" className="s-about target-section">
+              <div className="row about-info wide" data-animate-block>
+                <div className="column lg-6 md-12 about-info__pick-block">
+                  <img src="" alt="about" />
+                </div>
+              </div>
             </section>
           </MainContent>
         </PageContent>
