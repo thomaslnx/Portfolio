@@ -8,8 +8,8 @@ const GlobalStyle = createGlobalStyle`
   --base-font-size : calc(1.9rem * var(--multiplier));
   --space          : calc(3.2rem * var(--multiplier));
 
-  --circle-width: 70vw;
-  --header-height: 6.4rem;
+  /* --circle-width: 70vw;
+  --header-height: 6.4rem; */
 
   --vspace-0_125 : calc(0.125 * var(--space));
   --vspace-0_25  : calc(0.25 * var(--space));
@@ -254,14 +254,14 @@ const GlobalStyle = createGlobalStyle`
     outline: 0;
   }
 
-  h1 {
-    font-size: 2em;
-    margin: 0.67em 0;
-  }
-
   div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form, p, blockquote, th, td {
     margin: 0;
     padding: 0;
+  }
+
+  h1 {
+    font-size: 2em;
+    margin: 0.67em 0;
   }
 
   h1, h2, h3, h4, h5, h6,

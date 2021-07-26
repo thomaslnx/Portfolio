@@ -1,6 +1,5 @@
 import { useEffect } from 'react';
 import anime from 'animejs';
-import { Container } from './styles';
 
 const Circles: React.FC = (): JSX.Element => {
   useEffect(() => {
@@ -9,7 +8,6 @@ const Circles: React.FC = (): JSX.Element => {
         easing: 'easeInOutCubic',
         duration: 800,
         autoplay: false,
-        // delay: 5000,
       })
       .add({
         targets: '.circles span',
@@ -31,15 +29,13 @@ const Circles: React.FC = (): JSX.Element => {
   }, []);
 
   return (
-    <Container>
-      <div className="circles">
-        <span />
-        <span />
-        <span />
-        <span />
-        <span />
-      </div>
-    </Container>
+    <div className="circles">
+      <span />
+      <span />
+      <span />
+      <span />
+      <span />
+    </div>
   );
 };
 

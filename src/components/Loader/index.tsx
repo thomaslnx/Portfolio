@@ -44,6 +44,10 @@ const Loader: React.FC = (): JSX.Element => {
       window.addEventListener('load', () => {
         document.querySelector('html')?.classList.remove('ss-preload');
         document.querySelector('html')?.classList.add('ss-loaded');
+
+        document.querySelectorAll('.ss-animated').forEach((item) => {
+          item.classList.remove('ss-animated');
+        });
       });
 
       timeLine.play();

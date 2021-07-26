@@ -1,5 +1,5 @@
 import Marcos from '@pages/Marcos';
 
-export default function Home(): JSX.Element {
-  return <Marcos />;
-}
+const Home: React.FC = (): JSX.Element => <Marcos />;
+
+export default Home;
