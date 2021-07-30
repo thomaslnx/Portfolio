@@ -7,6 +7,7 @@ import Circles from '@components/Circles';
 import Header from '@components/Header';
 
 // import pageScroll from '@utils/pageScroll';
+import scrollSpy from '@utils/scrollSpy';
 
 import { PageContent, MainContent } from './styles';
 
@@ -14,6 +15,10 @@ const Marcos: React.FC = (): JSX.Element => {
   const [trigger, setTrigger] = useState([]);
 
   useEffect(() => {
+    const htmlTargets = document.querySelectorAll(
+      '.target-section'
+    ) as NodeListOf<HTMLElement>;
+
     const timeLine = anime
       .timeline({
         easing: 'easeInOutCubic',
@@ -53,6 +58,7 @@ const Marcos: React.FC = (): JSX.Element => {
     // Correct lately the time from begin circles animation, for now
     // will be continued that way.
     setTimeout(timeLine.play, 4800);
+    scrollSpy(htmlTargets);
   }, [trigger]);
 
   return (
