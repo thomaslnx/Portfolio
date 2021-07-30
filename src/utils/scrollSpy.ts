@@ -11,14 +11,16 @@ const scrollSpy = (target: NodeListOf<HTMLElement>): void => {
       const sectionTop = current.offsetTop - 50;
       const sectionId = current.getAttribute('id');
 
+      // Switch parentNode for parentElement in if.
+
       if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
         document
           .querySelector(`.main-nav a[href*=${sectionId}]`)
-          ?.parentNode?.classList.add('current');
+          ?.parentElement?.classList.add('current');
       } else {
         document
           .querySelector(`.main-nav a[href*=${sectionId}]`)
-          ?.parentNode?.classList.remove('current');
+          ?.parentElement?.classList.remove('current');
       }
     });
   }
