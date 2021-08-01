@@ -8,6 +8,7 @@ import Header from '@components/Header';
 
 // import pageScroll from '@utils/pageScroll';
 import scrollSpy from '@utils/scrollSpy';
+import viewAnimate from '@utils/viewAnimate';
 
 import { PageContent, MainContent } from './styles';
 
@@ -18,6 +19,9 @@ const Marcos: React.FC = (): JSX.Element => {
     const htmlTargets = document.querySelectorAll(
       '.target-section'
     ) as NodeListOf<HTMLElement>;
+    const sectionBlocks: NodeListOf<HTMLElement> = document.querySelectorAll(
+      '[data-animate-block]'
+    );
 
     const timeLine = anime
       .timeline({
@@ -59,6 +63,8 @@ const Marcos: React.FC = (): JSX.Element => {
     // will be continued that way.
     setTimeout(timeLine.play, 4800);
     scrollSpy(htmlTargets);
+    viewAnimate(sectionBlocks);
+    // console.log('valor de sectionBlocks: ', sectionBlocks);
   }, [trigger]);
 
   return (
