@@ -10,19 +10,11 @@ interface LoaderProps {
 const Loader = (
   { visibility, display }: LoaderProps,
   ref: RefObject<MutableRefObject<null>>
-): JSX.Element => {
-  console.log('preloadRef:', ref);
+): JSX.Element => (
+  // console.log('preloadRef:', ref);
 
-  return (
-    <Preloader
-      ref={ref}
-      id="preloader"
-      display={display}
-      visibility={visibility}
-    >
-      <Loading id="loader" />
-    </Preloader>
-  );
-};
-
+  <Preloader ref={ref} id="preloader" display={display} visibility={visibility}>
+    <Loading id="loader" />
+  </Preloader>
+);
 export default forwardRef<React.MutableRefObject<null>, LoaderProps>(Loader);

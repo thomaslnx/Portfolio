@@ -38,8 +38,11 @@ const Marcos: React.FC = (): JSX.Element => {
         opacity: 0,
         duration: 1000,
         begin: (anim) => {
-          console.log('valor de window no inicio da animação: ', window);
-          window.scrollTo(0, 0);
+          window.scroll({
+            top: 0,
+            left: 0,
+            behavior: 'smooth',
+          });
         },
       })
       .add({
@@ -113,17 +116,6 @@ const Marcos: React.FC = (): JSX.Element => {
       timeLine.play();
     })();
 
-    // const elements = window.document
-    //   .querySelectorAll('.smoothscroll')
-    //   .entries()
-    //   .next().value;
-
-    // setTrigger(elements);
-    // pageScroll(trigger);
-
-    // Correct lately the time from begin circles animation, for now
-    // will be continued that way.
-    // setTimeout(timeLine.play, 4800);
     scrollSpy(htmlTargets);
     viewAnimate(sectionBlocks);
   }, [trigger]);
