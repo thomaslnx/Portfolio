@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useRef, MutableRefObject } from 'react';
 import Image from 'next/image';
 import anime from 'animejs';
 
@@ -6,7 +6,7 @@ import Loader from '@components/Loader';
 import Circles from '@components/Circles';
 import Header from '@components/Header';
 
-// import pageScroll from '@utils/pageScroll';
+import pageScroll from '@utils/pageScroll';
 import scrollSpy from '@utils/scrollSpy';
 import viewAnimate from '@utils/viewAnimate';
 
@@ -15,20 +15,62 @@ import { PageContent, MainContent } from './styles';
 const Marcos: React.FC = (): JSX.Element => {
   const [trigger, setTrigger] = useState([]);
 
+  const preloadRef = useRef<MutableRefObject<null>>(null);
+
+  const [visibility, setVisibility] = useState<'visible' | 'hidden'>('visible');
+  const [display, setDisplay] = useState<'none' | 'flex'>('flex');
+
   useEffect(() => {
-    const htmlTargets = document.querySelectorAll(
+    const htmlTargets = window.document.querySelectorAll(
       '.target-section'
     ) as NodeListOf<HTMLElement>;
-    const sectionBlocks: NodeListOf<HTMLElement> = document.querySelectorAll(
-      '[data-animate-block]'
-    );
+    const sectionBlocks: NodeListOf<HTMLElement> =
+      window.document.querySelectorAll('[data-animate-block]');
 
     const timeLine = anime
       .timeline({
         easing: 'easeInOutCubic',
         duration: 800,
         autoplay: false,
-        // delay: 5000,
+      })
+      .add({
+        targets: '#loader',
+        opacity: 0,
+        duration: 4000,
+        begin: (anim) => {
+          window.scrollTo(0, 0);
+        },
+      })
+      .add({
+        targets: '#preloader',
+        opacity: 0,
+        complete: (anim) => {
+          if (preloadRef.current) {
+            setVisibility('hidden');
+            setDisplay('none');
+          }
+        },
+      })
+      .add(
+        {
+          targets: '.s-header',
+          translateY: [-100, 0],
+          opacity: [0, 1],
+        },
+        '-=200'
+      )
+      .add({
+        targets: '.circles span',
+        keyframes: [
+          {
+            opacity: [0, 0.3],
+          },
+          {
+            opacity: [0.3, 0.1],
+            delay: anime.stagger(100, { direction: 'reverse' }),
+          },
+        ],
+        delay: anime.stagger(100, { direction: 'reverse' }),
       })
       .add({
         targets: ['.s-intro .text-pretitle', '.s-intro .text-huge-title'],
@@ -51,7 +93,22 @@ const Marcos: React.FC = (): JSX.Element => {
         '-=800'
       );
 
-    // const elements = globalThis.window.document
+    (function ssPreloader() {
+      if (!preloadRef.current) return;
+
+      window.addEventListener('load', () => {
+        window.document.querySelector('html')?.classList.remove('ss-preload');
+        window.document.querySelector('html')?.classList.add('ss-loaded');
+
+        window.document.querySelectorAll('.ss-animated').forEach((item) => {
+          item.classList.remove('ss-animated');
+        });
+      });
+
+      timeLine.play();
+    })();
+
+    // const elements = window.document
     //   .querySelectorAll('.smoothscroll')
     //   .entries()
     //   .next().value;
@@ -61,15 +118,14 @@ const Marcos: React.FC = (): JSX.Element => {
 
     // Correct lately the time from begin circles animation, for now
     // will be continued that way.
-    setTimeout(timeLine.play, 4800);
+    // setTimeout(timeLine.play, 4800);
     scrollSpy(htmlTargets);
     viewAnimate(sectionBlocks);
-    // console.log('valor de sectionBlocks: ', sectionBlocks);
   }, [trigger]);
 
   return (
     <>
-      <Loader />
+      <Loader ref={preloadRef} display={display} visibility={visibility} />
 
       <PageContent className="s-pagewrap">
         <Circles />

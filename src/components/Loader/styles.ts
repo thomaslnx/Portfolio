@@ -1,6 +1,18 @@
+import { MutableRefObject, RefObject } from 'react';
 import styled from 'styled-components';
 
-export const Preloader = styled.div`
+interface LoaderProps {
+  preloadRef: RefObject<MutableRefObject<null>>;
+  visibility: string;
+  display: string;
+}
+
+interface Props extends Omit<LoaderProps, 'ref'> {
+  display: string;
+  visibility: string;
+}
+
+export const Preloader = styled.div<Props>`
   position: fixed;
   display: ${(props) => (props.display === '' ? 'flex' : props.display)};
   flex-flow: row wrap;

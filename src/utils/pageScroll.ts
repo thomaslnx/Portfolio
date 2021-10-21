@@ -4,6 +4,10 @@
 import MoveTo from 'moveto';
 
 const pageScroll = (elements: HTMLElement[]) => {
+  console.log(
+    'O valor de trigger passado para a função pageScroll: ',
+    elements
+  );
   const easeFunctions = {
     easeInQuad(t: number, b: number, c: number, d: number) {
       t /= d;
