@@ -36,8 +36,9 @@ const Marcos: React.FC = (): JSX.Element => {
       .add({
         targets: '#loader',
         opacity: 0,
-        duration: 4000,
+        duration: 1000,
         begin: (anim) => {
+          console.log('valor de window no inicio da animação: ', window);
           window.scrollTo(0, 0);
         },
       })
@@ -60,6 +61,12 @@ const Marcos: React.FC = (): JSX.Element => {
         '-=200'
       )
       .add({
+        targets: ['.s-intro .text-pretitle', '.s-intro .text-huge-title'],
+        translateX: [100, 0],
+        opacity: [0, 1],
+        delay: anime.stagger(400),
+      })
+      .add({
         targets: '.circles span',
         keyframes: [
           {
@@ -71,12 +78,6 @@ const Marcos: React.FC = (): JSX.Element => {
           },
         ],
         delay: anime.stagger(100, { direction: 'reverse' }),
-      })
-      .add({
-        targets: ['.s-intro .text-pretitle', '.s-intro .text-huge-title'],
-        translateX: [100, 0],
-        opacity: [0, 1],
-        delay: anime.stagger(400),
       })
       .add({
         targets: '.intro-social li',
@@ -97,12 +98,16 @@ const Marcos: React.FC = (): JSX.Element => {
       if (!preloadRef.current) return;
 
       window.addEventListener('load', () => {
+        window.document.querySelector('html')?.classList.remove('no-js');
+        window.document.querySelector('html')?.classList.add('js');
         window.document.querySelector('html')?.classList.remove('ss-preload');
         window.document.querySelector('html')?.classList.add('ss-loaded');
 
         window.document.querySelectorAll('.ss-animated').forEach((item) => {
           item.classList.remove('ss-animated');
         });
+
+        window.removeEventListener('load', ssPreloader);
       });
 
       timeLine.play();

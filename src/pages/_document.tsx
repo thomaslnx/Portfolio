@@ -41,7 +41,7 @@ export default class MyDocument extends Document {
 
   render(): ReactElement {
     return (
-      <Html lang="en" className="js ss-preload">
+      <Html lang="en" className="no-js ss-preload">
         <Head>
           <meta
             name="description"
