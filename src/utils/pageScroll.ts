@@ -1,13 +1,8 @@
-/* eslint-disable @typescript-eslint/explicit-module-boundary-types */
-/* eslint-disable no-plusplus */
-/* eslint-disable no-param-reassign */
 import MoveTo from 'moveto';
 
-const pageScroll = (elements: HTMLElement[]) => {
-  console.log(
-    'O valor de trigger passado para a função pageScroll: ',
-    elements
-  );
+const pageScroll = (elements: NodeListOf<HTMLElement>) => {
+  const sections = Array.from(elements);
+
   const easeFunctions = {
     easeInQuad(t: number, b: number, c: number, d: number) {
       t /= d;
@@ -31,7 +26,10 @@ const pageScroll = (elements: HTMLElement[]) => {
     },
   };
 
-  // const triggers = document.querySelectorAll('.smoothscroll');
+  /**
+   * O scroll só funcionou por que alterei o apontamento do objeto window do qual ele
+   * pega o container dentro la lib.
+   */
 
   const moveTo = new MoveTo(
     {
@@ -43,8 +41,8 @@ const pageScroll = (elements: HTMLElement[]) => {
     easeFunctions
   );
 
-  elements.forEach((element) => {
-    moveTo.registerTrigger(element);
+  sections.forEach((section) => {
+    moveTo.registerTrigger(section);
   });
 };
 

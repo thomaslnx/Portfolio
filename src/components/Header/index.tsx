@@ -20,22 +20,22 @@ const Header: React.FC = (): JSX.Element => (
             </a>
           </li>
           <li className="current">
-            <a href="#intro" className="smooth-scroll">
+            <a href="#intro" className="smoothscroll">
               intro
             </a>
           </li>
           <li>
-            <a href="#about" className="smooth-scroll">
+            <a href="#about" className="smoothscroll">
               About
             </a>
           </li>
           <li>
-            <a href="#works" className="smooth-scroll">
+            <a href="#works" className="smoothscroll">
               Works
             </a>
           </li>
           <li>
-            <a href="#contact" className="smooth-scroll">
+            <a href="#contact" className="smoothscroll">
               Say Hello
             </a>
           </li>

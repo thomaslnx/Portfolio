@@ -57,6 +57,9 @@ module.exports = {
     ],
     'no-useless-return': 'off',
     'react/jsx-pascal-case': 'off',
+    '@typescript-eslint/explicit-module-boundary-types': 'off',
+    'no-plusplus': 'off',
+    'no-param-reassign': 'off',
   },
   settings: {
     'import/resolver': {

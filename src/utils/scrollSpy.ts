@@ -12,7 +12,6 @@ const scrollSpy = (target: NodeListOf<HTMLElement>): void => {
       const sectionId = current.getAttribute('id');
 
       // Switch parentNode for parentElement in if.
-
       if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
         document
           .querySelector(`.main-nav a[href*=${sectionId}]`)

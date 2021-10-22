@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-expressions */
 import { useEffect, useState, useRef, MutableRefObject } from 'react';
 import Image from 'next/image';
 import anime from 'animejs';
@@ -13,17 +14,17 @@ import viewAnimate from '@utils/viewAnimate';
 import { PageContent, MainContent } from './styles';
 
 const Marcos: React.FC = (): JSX.Element => {
-  const [trigger, setTrigger] = useState([]);
-
   const preloadRef = useRef<MutableRefObject<null>>(null);
 
   const [visibility, setVisibility] = useState<'visible' | 'hidden'>('visible');
   const [display, setDisplay] = useState<'none' | 'flex'>('flex');
+  const [htmlTargets, setHtmlTargets] = useState<NodeListOf<HTMLElement>>();
+  const [trigger, setTrigger] = useState<NodeListOf<HTMLElement>>();
 
   useEffect(() => {
-    const htmlTargets = window.document.querySelectorAll(
-      '.target-section'
-    ) as NodeListOf<HTMLElement>;
+    setHtmlTargets(window.document.querySelectorAll('.target-section'));
+    setTrigger(window.document.querySelectorAll('.smoothscroll'));
+
     const sectionBlocks: NodeListOf<HTMLElement> =
       window.document.querySelectorAll('[data-animate-block]');
 
@@ -37,7 +38,7 @@ const Marcos: React.FC = (): JSX.Element => {
         targets: '#loader',
         opacity: 0,
         duration: 1000,
-        begin: (anim) => {
+        begin: () => {
           window.scroll({
             top: 0,
             left: 0,
@@ -48,7 +49,7 @@ const Marcos: React.FC = (): JSX.Element => {
       .add({
         targets: '#preloader',
         opacity: 0,
-        complete: (anim) => {
+        complete: () => {
           if (preloadRef.current) {
             setVisibility('hidden');
             setDisplay('none');
@@ -116,14 +117,17 @@ const Marcos: React.FC = (): JSX.Element => {
       timeLine.play();
     })();
 
-    scrollSpy(htmlTargets);
     viewAnimate(sectionBlocks);
-  }, [trigger]);
+  }, []);
+
+  useEffect(() => {
+    htmlTargets !== undefined && scrollSpy(htmlTargets);
+    trigger !== undefined && pageScroll(trigger);
+  }, [trigger, htmlTargets]);
 
   return (
     <>
       <Loader ref={preloadRef} display={display} visibility={visibility} />
-
       <PageContent className="s-pagewrap">
         <Circles />
         <Header />
