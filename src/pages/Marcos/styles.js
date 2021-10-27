@@ -51,6 +51,16 @@ export const PageContent = styled.div`
     height: 20%;
     width: 20%;
   }
+
+  .ss-preload .s-pagewrap {
+    visibility: hidden;
+  }
+
+  @media screen and (max-width: 800px) {
+    .circles {
+      top: calc(var(--header-height));
+    }
+  }
 `;
 
 export const MainContent = styled.main`
