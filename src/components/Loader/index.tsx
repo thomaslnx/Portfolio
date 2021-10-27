@@ -11,8 +11,6 @@ const Loader = (
   { visibility, display }: LoaderProps,
   ref: RefObject<MutableRefObject<null>>
 ): JSX.Element => (
-  // console.log('preloadRef:', ref);
-
   <Preloader ref={ref} id="preloader" display={display} visibility={visibility}>
     <Loading id="loader" />
   </Preloader>

@@ -135,6 +135,21 @@ const GlobalStyle = createGlobalStyle`
   --font-mono : Consolas, "Andale Mono", Courier, "Courier New", monospace;
 }
 
+
+// Mobile
+@media screen and (max-width: 600px) {
+  :root {
+    --multiplier: 0.875;
+  }
+}
+
+// Medium screen size
+@media screen and (max-width: 1200px) {
+  :root {
+    --gutter: 1.6rem;
+  }
+}
+
   .lg-1 {
       flex  : none;
       width : 8.33333%;
@@ -237,7 +252,7 @@ const GlobalStyle = createGlobalStyle`
   }
 
   a {
-    background: transparent;
+    background-color: transparent;
     text-decoration: none;
     color: var(--color-1);
     transition: all 0.3s ease-in-out;
@@ -279,6 +294,13 @@ const GlobalStyle = createGlobalStyle`
     font-size: var(--text-display-1);
     line-height: var(--vspace-2);
     letter-spacing: -0.01em;
+  }
+
+  @media screen and (max-width: 500px) {
+    h1, .h1 {
+      font-size: var(--text-xxl);
+      line-height: calc(1.625 * var(--space));
+    }
   }
 
 `;

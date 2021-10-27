@@ -1,4 +1,3 @@
-/* eslint-disable no-unused-expressions */
 import { useEffect, useState, useRef, MutableRefObject } from 'react';
 import Image from 'next/image';
 import anime from 'animejs';
@@ -158,7 +157,7 @@ const Marcos: React.FC = (): JSX.Element => {
                 </li>
                 <li>
                   <a href="https://www.linkedin.com/in/marcos-de-moura-silva/">
-                    Linkedin
+                    LinkedIn
                   </a>
                 </li>
                 <li>

@@ -60,6 +60,7 @@ module.exports = {
     '@typescript-eslint/explicit-module-boundary-types': 'off',
     'no-plusplus': 'off',
     'no-param-reassign': 'off',
+    'no-unused-expressions': 'off',
   },
   settings: {
     'import/resolver': {
