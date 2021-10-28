@@ -58,7 +58,7 @@ export const PageContent = styled.div`
 
   @media screen and (max-width: 800px) {
     .circles {
-      top: calc(var(--header-height));
+      top: calc(var(--header-height) + 5vh);
     }
   }
 `;

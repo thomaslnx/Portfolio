@@ -19,10 +19,18 @@ const Marcos: React.FC = (): JSX.Element => {
   const [display, setDisplay] = useState<'none' | 'flex'>('flex');
   const [htmlTargets, setHtmlTargets] = useState<NodeListOf<HTMLElement>>();
   const [trigger, setTrigger] = useState<NodeListOf<HTMLElement>>();
+  const [toggleButton, setToggleButton] = useState<Element | null>();
+  const [mainNavWrap, setMainNavWrap] = useState<Element | null>();
+  const [siteBody, setSiteBody] = useState<HTMLBodyElement | null>();
+  const [menuIsClicked, setMenuIsClicked] = useState<boolean>(false);
+  const [menuIsOpen, setMenuIsOpen] = useState<boolean | undefined>(false);
 
   useEffect(() => {
     setHtmlTargets(window.document.querySelectorAll('.target-section'));
     setTrigger(window.document.querySelectorAll('.smoothscroll'));
+    setToggleButton(window.document.querySelector('.mobile-menu-toggle'));
+    setMainNavWrap(window.document.querySelector('.main-nav-wrap'));
+    setSiteBody(window.document.querySelector('body'));
 
     const sectionBlocks: NodeListOf<HTMLElement> =
       window.document.querySelectorAll('[data-animate-block]');
@@ -122,14 +130,62 @@ const Marcos: React.FC = (): JSX.Element => {
   useEffect(() => {
     htmlTargets !== undefined && scrollSpy(htmlTargets);
     trigger !== undefined && pageScroll(trigger);
-  }, [trigger, htmlTargets]);
+
+    const menuClickedEventListener = (event: Event) => {
+      event.preventDefault();
+
+      setMenuIsClicked(!menuIsClicked);
+      window.document.body.classList.toggle('menu-is-open');
+    };
+
+    const menuLinkEventListener = () => {
+      if (window.matchMedia('(max-width: 800px)').matches) {
+        toggleButton?.classList.add('is-clicked');
+        window.document.body.classList.toggle('menu-is-open');
+      }
+    };
+
+    mainNavWrap?.querySelectorAll('.main-nav a').forEach((link) => {
+      link.addEventListener('click', menuLinkEventListener);
+    });
+
+    const menuResizeContainer = () => {
+      if (window.matchMedia('(min-width: 801px)').matches) {
+        if (window.document.body.classList.contains('menu-is-open')) {
+          window.document.body.classList.remove('menu-is-open');
+        }
+
+        if (toggleButton?.classList.contains('is-clicked')) {
+          toggleButton?.classList.remove('is-clicked');
+        }
+      }
+    };
+
+    toggleButton?.addEventListener('click', menuClickedEventListener);
+    window.addEventListener('resize', menuResizeContainer);
+
+    return () => {
+      toggleButton?.removeEventListener('click', menuClickedEventListener);
+
+      mainNavWrap?.querySelectorAll('.main-nav a').forEach((link) => {
+        link.removeEventListener('click', menuLinkEventListener);
+      });
+    };
+  }, [
+    trigger,
+    htmlTargets,
+    menuIsClicked,
+    menuIsOpen,
+    toggleButton,
+    mainNavWrap,
+  ]);
 
   return (
     <>
       <Loader ref={preloadRef} display={display} visibility={visibility} />
       <PageContent className="s-pagewrap">
         <Circles />
-        <Header />
+        <Header menuIsClicked={menuIsClicked} />
         <MainContent className="s-content">
           {/* -----------------------------------------
            * ## Section intro

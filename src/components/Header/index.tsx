@@ -1,12 +1,21 @@
 import { Container } from './styles';
 
-const Header: React.FC = (): JSX.Element => (
+interface HeaderProps {
+  menuIsClicked: boolean;
+}
+
+const Header = ({ menuIsClicked }: HeaderProps): JSX.Element => (
   <Container className="s-header">
     <div className="header-mobile">
       <span className="mobile-home-link">
         <a href="#">Marcos.</a>
       </span>
-      <a className="mobile-menu-toggle" href="#0">
+      <a
+        className={`mobile-menu-toggle ${
+          menuIsClicked === true ? 'is-clicked' : ''
+        }`}
+        href="#0"
+      >
         <span>Menu</span>
       </a>
     </div>

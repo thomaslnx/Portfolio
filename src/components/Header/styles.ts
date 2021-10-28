@@ -1,16 +1,13 @@
 import styled from 'styled-components';
 
 export const Container = styled.header`
-  &.s-header {
-    --box-shadow: 0 1px 1px rgba(0, 0, 0, 0.06), 0 2px 2px rgba(0, 0, 0, 0.06),
-      0 4px 4px rgba(0, 0, 0, 0.06), 0 8px 8px rgba(0, 0, 0, 0.06);
-    z-index: 100;
-    width: 100%;
-    position: fixed;
-    top: 0;
-    left: 0;
-  }
-
+  --box-shadow: 0 1px 1px rgba(0, 0, 0, 0.06), 0 2px 2px rgba(0, 0, 0, 0.06),
+    0 4px 4px rgba(0, 0, 0, 0.06), 0 8px 8px rgba(0, 0, 0, 0.06);
+  z-index: 100;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
   /* --------------------------
   ** ## Desktop main navigation
   *  --------------------------
@@ -170,10 +167,7 @@ export const Container = styled.header`
     transition-property: bottom, transform;
   }
 
-  /* ---------------------------------
-  ** ## When some menu item is clicked
-  *  ---------------------------------
-  * /
+  // ## When some menu item is clicked
 
   .mobile-menu-toggle.is-clicked span {
     background-color: rgba(255, 255, 255, 0);
@@ -195,7 +189,7 @@ export const Container = styled.header`
     transform: rotate(-45deg);
   }
 
-/* -------------------------------------------------------------------
+  /* -------------------------------------------------------------------
  * responsive: site-header
  * -------------------------------------------------------------------
 */
