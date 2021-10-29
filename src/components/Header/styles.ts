@@ -261,28 +261,6 @@ export const Container = styled.header`
     .main-nav ul li:first-child {
       display: none;
     }
-
-    .menu-is-open .s-header {
-      height: auto;
-    }
-
-    .menu-is-open .header-mobile {
-      box-shadow: none;
-    }
-
-    .menu-is-open .main-nav-wrap {
-      transform: scaleY(1);
-      transition: transform 0.4s cubic-bezier(0.215, 0.61, 0.355, 1);
-      transition-delay: 0s;
-    }
-
-    .menu-is-open .main-nav {
-      transform: translateY(0);
-      opacity: 1;
-      visibility: visible;
-      transition: all 0.4s cubic-bezier(0.215, 0.61, 0.355, 1);
-      transition-delay: 0.4s;
-    }
   }
 
   @media screen and (max-width: 600px) {

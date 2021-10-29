@@ -140,8 +140,8 @@ const Marcos: React.FC = (): JSX.Element => {
 
     const menuLinkEventListener = () => {
       if (window.matchMedia('(max-width: 800px)').matches) {
-        toggleButton?.classList.add('is-clicked');
-        window.document.body.classList.toggle('menu-is-open');
+        toggleButton?.classList.toggle('is-clicked');
+        siteBody?.classList.toggle('menu-is-open');
       }
     };
 
@@ -152,7 +152,7 @@ const Marcos: React.FC = (): JSX.Element => {
     const menuResizeContainer = () => {
       if (window.matchMedia('(min-width: 801px)').matches) {
         if (window.document.body.classList.contains('menu-is-open')) {
-          window.document.body.classList.remove('menu-is-open');
+          siteBody?.classList.remove('menu-is-open');
         }
 
         if (toggleButton?.classList.contains('is-clicked')) {
@@ -178,6 +178,7 @@ const Marcos: React.FC = (): JSX.Element => {
     menuIsOpen,
     toggleButton,
     mainNavWrap,
+    siteBody,
   ]);
 
   return (
