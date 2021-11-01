@@ -130,11 +130,11 @@ export const Container = styled.header`
 
   .mobile-menu-toggle span {
     display: block;
-    background-color: var(--color-white);
     width: 24px;
     height: 1px;
+    background-color: var(--color-white);
+    transition: background-color 1.1s ease-in-out;
     margin-top: -1px;
-    font: 0/0 a;
     text-shadow: none;
     color: transparent;
     position: absolute;
@@ -142,7 +142,6 @@ export const Container = styled.header`
     top: 50%;
     bottom: auto;
     left: auto;
-    transition: background-color 1.2s ease-in-out;
   }
 
   .mobile-menu-toggle span::before,
@@ -150,7 +149,7 @@ export const Container = styled.header`
     content: '';
     width: 100%;
     height: 100%;
-    background-color: inherit;
+    background-color: var(--color-white);
     position: absolute;
     left: 0;
   }
@@ -159,6 +158,7 @@ export const Container = styled.header`
 
   .mobile-menu-toggle.is-clicked span {
     background-color: rgba(255, 255, 255, 0);
+    transition: background-color 0.4s ease-in-out;
   }
 
   .mobile-menu-toggle.is-clicked span::before,
