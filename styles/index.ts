@@ -300,7 +300,6 @@ const GlobalStyle = createGlobalStyle`
     background-color: transparent;
     text-decoration: none;
     color: var(--color-1);
-    transition: all 0.3s ease-in-out;
   }
 
   a:focus,
@@ -360,7 +359,6 @@ const GlobalStyle = createGlobalStyle`
     .menu-is-open .main-nav-wrap {
       transform: scaleY(1);
       transition: transform 0.4s cubic-bezier(0.215, 0.61, 0.355, 1);
-      transition-delay: 0s;
     }
 
     .menu-is-open .main-nav {
@@ -370,6 +368,7 @@ const GlobalStyle = createGlobalStyle`
       transition: all 0.4s cubic-bezier(0.215, 0.61, 0.355, 1);
       transition-delay: 0.4s;
     }
+
   }
 
 `;

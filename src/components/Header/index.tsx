@@ -30,7 +30,7 @@ const Header = ({ menuIsClicked }: HeaderProps): JSX.Element => (
           </li>
           <li className="current">
             <a href="#intro" className="smoothscroll">
-              intro
+              Intro
             </a>
           </li>
           <li>

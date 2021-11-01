@@ -134,8 +134,8 @@ const Marcos: React.FC = (): JSX.Element => {
     const menuClickedEventListener = (event: Event) => {
       event.preventDefault();
 
-      setMenuIsClicked(!menuIsClicked);
-      window.document.body.classList.toggle('menu-is-open');
+      toggleButton?.classList.toggle('is-clicked');
+      siteBody?.classList.toggle('menu-is-open');
     };
 
     const menuLinkEventListener = () => {
