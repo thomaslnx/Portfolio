@@ -348,6 +348,18 @@ const GlobalStyle = createGlobalStyle`
   }
 
   @media screen and (max-width: 800px) {
+    .mobile-menu-toggle span::before {
+      top: -8px;
+      transform: rotate(0deg);
+      transition: transform 0.6s ease-in-out 0s, top 0.4s ease-in-out 0.6s;
+    }
+
+    .mobile-menu-toggle span::after {
+      bottom: -8px;
+      transform: rotate(0deg);
+      transition: transform 0.6s ease-in-out 0s, bottom 0.4s ease-in-out 0.6s;
+    }
+
     .menu-is-open .s-header {
       height: auto;
     }

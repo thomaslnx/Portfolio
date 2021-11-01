@@ -142,7 +142,7 @@ export const Container = styled.header`
     top: 50%;
     bottom: auto;
     left: auto;
-    transition: background-color 0.2s ease-in-out;
+    transition: background-color 1.2s ease-in-out;
   }
 
   .mobile-menu-toggle span::before,
@@ -151,20 +151,8 @@ export const Container = styled.header`
     width: 100%;
     height: 100%;
     background-color: inherit;
-    transition-duration: 0.2s, 0.2s;
-    transition-delay: 0.2s, 0s;
     position: absolute;
     left: 0;
-  }
-
-  .mobile-menu-toggle span::before {
-    top: -8px;
-    transition-property: top, transform;
-  }
-
-  .mobile-menu-toggle span::after {
-    bottom: -8px;
-    transition-property: bottom, transform;
   }
 
   // ## When some menu item is clicked
@@ -176,17 +164,19 @@ export const Container = styled.header`
   .mobile-menu-toggle.is-clicked span::before,
   .mobile-menu-toggle.is-clicked span::after {
     background-color: white;
-    transition-delay: 0s, 0.2s;
+    transition-delay: 0.2s, 0.2s;
   }
 
   .mobile-menu-toggle.is-clicked span::before {
     top: 0;
     transform: rotate(45deg);
+    transition: top 0.4s ease-in-out 0s, transform 0.4s ease-in-out 0.6s;
   }
 
   .mobile-menu-toggle.is-clicked span::after {
     bottom: 0;
     transform: rotate(-45deg);
+    transition: bottom 0.4s ease-in-out 0s, transform 0.4s ease-in-out 0.6s;
   }
 
   /* -------------------------------------------------------------------
