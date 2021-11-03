@@ -1,11 +1,12 @@
 import { useEffect, useState, useRef, MutableRefObject } from 'react';
-import Image from 'next/image';
+// import Image from 'next/image';
 import anime from 'animejs';
 
 import Loader from '@components/Loader';
 import Circles from '@components/Circles';
 import Header from '@components/Header';
 import Intro from '@components/Intro';
+import About from '@components/About';
 
 import pageScroll from '@utils/pageScroll';
 import scrollSpy from '@utils/scrollSpy';
@@ -190,9 +191,10 @@ const Marcos: React.FC = (): JSX.Element => {
         <Header menuIsClicked={menuIsClicked} />
         <MainContent className="s-content">
           <Intro />
+          <About />
 
           {/* About section */}
-          <section id="about" className="s-about target-section">
+          {/* <section id="about" className="s-about target-section">
             <div className="row about-info wide" data-animate-block>
               <div className="column lg-6 md-12 about-info__pic-block">
                 <Image
@@ -224,7 +226,7 @@ const Marcos: React.FC = (): JSX.Element => {
                 </div>
               </div>
             </div>
-          </section>
+          </section> */}
         </MainContent>
       </PageContent>
     </>
