@@ -406,6 +406,8 @@ const GlobalStyle = createGlobalStyle`
     letter-spacing: -0.01em;
   }
 
+
+
   @media screen and (max-width: 500px) {
     h1, .h1 {
       font-size: var(--text-xxl);
