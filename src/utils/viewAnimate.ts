@@ -23,7 +23,7 @@ const viewAnimate = (animatedBlocks: NodeListOf<HTMLElement>): void => {
           delay: anime.stagger(400, { start: 200 }),
           duration: 800,
           easing: 'easeInOutCubic',
-          begin: (anim) => {
+          begin: () => {
             current.classList.add('ss-animated');
           },
         });

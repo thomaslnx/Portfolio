@@ -248,8 +248,8 @@ const Marcos: React.FC = (): JSX.Element => {
                   src="/images/about.jpg"
                   alt="about"
                   layout="responsive"
-                  width={200}
-                  height={200}
+                  width={700}
+                  height={868}
                   className="about-info__pic"
                   data-animate-el
                 />

@@ -162,6 +162,10 @@ const GlobalStyle = createGlobalStyle`
   max-width: var(--width-wide);
 }
 
+[data-animate-el] {
+  opacity: 0;
+}
+
 .row .row {
   width: auto;
   max-width: none;
@@ -254,6 +258,68 @@ const GlobalStyle = createGlobalStyle`
       flex  : none;
       width : 100%;
   }
+
+@media screen and (max-width: 1200px) {
+  .md-1 {
+        flex  : none;
+        width : 8.33333%;
+    }
+
+    .md-2 {
+        flex  : none;
+        width : 16.66667%;
+    }
+
+    .md-3 {
+        flex  : none;
+        width : 25%;
+    }
+
+    .md-4 {
+        flex  : none;
+        width : 33.33333%;
+    }
+
+    .md-5 {
+        flex  : none;
+        width : 41.66667%;
+    }
+
+    .md-6 {
+        flex  : none;
+        width : 50%;
+    }
+
+    .md-7 {
+        flex  : none;
+        width : 58.33333%;
+    }
+
+    .md-8 {
+        flex  : none;
+        width : 66.66667%;
+    }
+
+    .md-9 {
+        flex  : none;
+        width : 75%;
+    }
+
+    .md-10 {
+        flex  : none;
+        width : 83.33333%;
+    }
+
+    .md-11 {
+        flex  : none;
+        width : 91.66667%;
+    }
+
+    .md-12 {
+        flex  : none;
+        width : 100%;
+    }
+}
 
   *, html, body, #__next {
     margin: 0;
