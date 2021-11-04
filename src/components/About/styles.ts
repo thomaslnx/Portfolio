@@ -35,8 +35,12 @@ export const Container = styled.section`
   }
 
   .about-info__text {
-    padding: var(--vspace-3_5) 10vw var(--vspace-2) 0;
     margin-left: -4rem;
+    padding: var(--vspace-2) 10vw var(--vspace-2) 0;
+
+    p {
+      line-height: -0.8;
+    }
   }
 
   .about-info__text .text-pretitle {

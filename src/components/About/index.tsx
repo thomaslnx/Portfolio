@@ -22,7 +22,16 @@ const About = () => (
             About
           </h2>
           <p className="attention-getter" data-animate-el>
-            personal descrition
+            Hi, Marcos Moura here! 👋 A little bit about myself: I'm married to
+            the most wonderful woman ever and I have two little beautiful
+            princesses. I'm a Jr Javascript Full Stack developer with about 3
+            years of experience, recently working mainly with ReactJS and NodeJS
+            but I have some experience with React Native too. I'm always keeping
+            in move, learning something new that is so new and exciting to me
+            and which makes me more productive and valuable as a professional
+            developer. I love coding because is there no boring routine from
+            doing daily the same thing and as proof virtually every single day I
+            learn or do something completely new to me.
           </p>
           <a href="#" className="btn btn--medium u-fullwidth" data-animate-el>
             Download CV
