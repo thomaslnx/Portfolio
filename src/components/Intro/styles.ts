@@ -75,12 +75,20 @@ export const Container = styled.section`
   }
 
   @media screen and (max-width: 350px) {
+    .intro-content .column {
+      padding: 0;
+    }
+
     .intro-social {
       display: none;
     }
   }
 
   @media screen and (max-width: 400px) {
+    .intro-content .column {
+      padding: 0;
+    }
+
     .intro-content .text-huge-title {
       font-size: var(--text-display-1);
       line-height: var(--vspace-2);
@@ -91,26 +99,40 @@ export const Container = styled.section`
     }
   }
 
-  @media screen and (max-width: 500px) {
+  @media (min-width: 401px) and (max-width: 500px) {
     --text-huge-multiplier: 0.55;
+
+    .intro-content .column {
+      padding: 0;
+    }
+
+    .intro-content .text-huge-title {
+      font-size: var(--text-display-2);
+      line-height: var(--vspace-2);
+    }
 
     .intro-social {
       left: 1.4rem;
     }
   }
 
-  @media screen and (max-width: 600px) {
-    --gutter: 2rem;
-    --text-hug-multiplier: 0.58;
+  @media (min-width: 501px) and (max-width: 600px) {
+    .intro-content .column {
+      padding: 0;
+    }
+
+    .intro-content .text-huge-title {
+      font-size: calc(8.94rem * 0.92);
+    }
 
     .intro-scrolldown {
       right: 2.4rem;
     }
   }
 
-  @media screen and (max-width: 800px) {
+  @media (min-width: 601px) and (max-width: 800px) {
     --gutter: 4rem;
-    --text-huge-multiplier: 0.7;
+    --text-huge-multiplier: 0.2;
 
     .intro-content {
       min-height: 0;
@@ -118,8 +140,9 @@ export const Container = styled.section`
       padding-top: calc(9.6rem + var(--header-height));
     }
 
-    .intro-content .text-huge-multiplier {
+    .intro-content .text-huge-title {
       padding-right: 0;
+      font-size: calc(11rem * 0.92);
       margin-bottom: var(--vspace-1_5);
     }
 
