@@ -199,65 +199,65 @@ const GlobalStyle = createGlobalStyle`
   }
 }
 
-  .lg-1 {
-      flex  : none;
-      width : 8.33333%;
-  }
+.lg-1 {
+    flex: none;
+    width: 8.33333%;
+}
 
-  .lg-2 {
-      flex  : none;
-      width : 16.66667%;
-  }
+.lg-2 {
+    flex: none;
+    width: 16.66667%;
+}
 
-  .lg-3 {
-      flex  : none;
-      width : 25%;
-  }
+.lg-3 {
+    flex: none;
+    width: 25%;
+}
 
-  .lg-4 {
-      flex  : none;
-      width : 33.33333%;
-  }
+.lg-4 {
+    flex  : none;
+    width : 33.33333%;
+}
 
-  .lg-5 {
-      flex  : none;
-      width : 41.66667%;
-  }
+.lg-5 {
+    flex  : none;
+    width : 41.66667%;
+}
 
-  .lg-6 {
-      flex  : none;
-      width : 50%;
-  }
+.lg-6 {
+    flex: none;
+    width: 50%;
+}
 
-  .lg-7 {
-      flex  : none;
-      width : 58.33333%;
-  }
+.lg-7 {
+    flex: none;
+    width: 58.33333%;
+}
 
-  .lg-8 {
-      flex  : none;
-      width : 66.66667%;
-  }
+.lg-8 {
+    flex: none;
+    width: 66.66667%;
+}
 
-  .lg-9 {
-      flex  : none;
-      width : 75%;
-  }
+.lg-9 {
+    flex: none;
+    width: 75%;
+}
 
-  .lg-10 {
-      flex  : none;
-      width : 83.33333%;
-  }
+.lg-10 {
+    flex: none;
+    width: 83.33333%;
+}
 
-  .lg-11 {
-      flex  : none;
-      width : 91.66667%;
-  }
+.lg-11 {
+    flex: none;
+    width: 91.66667%;
+}
 
-  .lg-12 {
-      flex  : none;
-      width : 100%;
-  }
+.lg-12 {
+    flex: none;
+    width: 100%;
+}
 
 @media screen and (max-width: 1200px) {
   .md-1 {
@@ -265,60 +265,60 @@ const GlobalStyle = createGlobalStyle`
         width : 8.33333%;
     }
 
-    .md-2 {
-        flex  : none;
-        width : 16.66667%;
-    }
+  .md-2 {
+      flex  : none;
+      width : 16.66667%;
+  }
 
-    .md-3 {
-        flex  : none;
-        width : 25%;
-    }
+  .md-3 {
+      flex  : none;
+      width : 25%;
+  }
 
-    .md-4 {
-        flex  : none;
-        width : 33.33333%;
-    }
+  .md-4 {
+      flex  : none;
+      width : 33.33333%;
+  }
 
-    .md-5 {
-        flex  : none;
-        width : 41.66667%;
-    }
+  .md-5 {
+      flex  : none;
+      width : 41.66667%;
+  }
 
-    .md-6 {
-        flex  : none;
-        width : 50%;
-    }
+  .md-6 {
+      flex  : none;
+      width : 50%;
+  }
 
-    .md-7 {
-        flex  : none;
-        width : 58.33333%;
-    }
+  .md-7 {
+      flex  : none;
+      width : 58.33333%;
+  }
 
-    .md-8 {
-        flex  : none;
-        width : 66.66667%;
-    }
+  .md-8 {
+      flex  : none;
+      width : 66.66667%;
+  }
 
-    .md-9 {
-        flex  : none;
-        width : 75%;
-    }
+  .md-9 {
+      flex  : none;
+      width : 75%;
+  }
 
-    .md-10 {
-        flex  : none;
-        width : 83.33333%;
-    }
+  .md-10 {
+      flex  : none;
+      width : 83.33333%;
+  }
 
-    .md-11 {
-        flex  : none;
-        width : 91.66667%;
-    }
+  .md-11 {
+      flex  : none;
+      width : 91.66667%;
+  }
 
-    .md-12 {
-        flex  : none;
-        width : 100%;
-    }
+  .md-12 {
+      flex  : none;
+      width : 100%;
+  }
 }
 
   *, html, body, #__next {

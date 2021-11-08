@@ -39,7 +39,7 @@ export const Container = styled.section`
     padding: var(--vspace-2) 10vw var(--vspace-2) 0;
 
     p {
-      line-height: -0.8;
+      line-height: 1.4;
     }
   }
 
@@ -48,7 +48,7 @@ export const Container = styled.section`
   }
 
   .about-info__text .btn {
-    margin-top: var(--vspace-1);
+    margin-top: var(--vspace-2);
     margin-bottom: 0;
   }
 
@@ -138,5 +138,86 @@ export const Container = styled.section`
     font-size: var(--text-md);
     line-height: var(--vspace-1_25);
     color: var(--color-text-dark);
+  }
+
+  @media screen and (max-width: 400px) {
+    .about-timelines {
+      --timeline-left-padding: var(--vspace-1);
+    }
+  }
+
+  @media screen and (max-width: 600px) {
+    .about-info {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 0 3rem;
+      width: 100%;
+    }
+
+    .about-info .about-info__text {
+      display: flex;
+      flex-direction: column;
+      padding: 0;
+      margin: 3rem 0 0 0;
+      width: 100%;
+    }
+  }
+
+  @media (min-width: 601px) and (max-width: 800px) {
+    .about-info {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 0 5rem;
+      width: 100%;
+    }
+
+    .about-info .about-info__text {
+      display: flex;
+      flex-direction: column;
+      padding: 0;
+      margin: 3rem 0 0 0;
+      width: 100%;
+    }
+
+    .about-timelines {
+      --timeline-left-padding: var(--vspace-1_5);
+    }
+
+    .about-timelines .column + .column {
+      margin-top: var(--vspace-1_5);
+    }
+  }
+
+  @media screen and (max-width: 1000px) {
+    .about-timelines {
+      --timeline-left-padding: var(--vspace-1_25);
+    }
+  }
+
+  @media (min-width: 1001px) and (max-width: 1200px) {
+    .about-info {
+      --gutter: 1.6rem;
+      width: 100%;
+      max-width: 800px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .about-info .about-info__text {
+      display: flex;
+      flex-direction: column;
+      padding: 0;
+      margin: 3rem 0 0 0;
+      width: 100%;
+    }
+  }
+
+  @media screen and (max-width: 1300px) {
+    .about-info__text {
+      padding: var(--vspace-2) 8rem var(--vspace-1_5) 0;
+    }
   }
 `;
