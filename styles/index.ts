@@ -54,21 +54,21 @@ const GlobalStyle = createGlobalStyle`
   --width-narrower : 800px;
   --width-grid-max : var(--width-max);
 
-  --gutter : 2rem;
+  --gutter: 2rem;
 
   --primary-background-color: #141516;
 
   --color-1 : hsla(36, 72%, 70%, 1);
   --color-2 : hsla(168, 62%, 36%, 1);
 
-  --color-1-lighter : hsla(36, 72%, 90%, 1);
-  --color-1-light   : hsla(36, 72%, 80%, 1);
-  --color-1-dark    : hsla(36, 72%, 60%, 1);
-  --color-1-darker  : hsla(36, 72%, 50%, 1);
-  --color-2-lighter : hsla(168, 62%, 56%, 1);
-  --color-2-light   : hsla(168, 62%, 46%, 1);
-  --color-2-dark    : hsla(168, 62%, 26%, 1);
-  --color-2-darker  : hsla(168, 62%, 16%, 1);
+  --color-1-lighter: hsla(36, 72%, 90%, 1);
+  --color-1-light: hsla(36, 72%, 80%, 1);
+  --color-1-dark: hsla(36, 72%, 60%, 1);
+  --color-1-darker: hsla(36, 72%, 50%, 1);
+  --color-2-lighter: hsla(168, 62%, 56%, 1);
+  --color-2-light: hsla(168, 62%, 46%, 1);
+  --color-2-dark: hsla(168, 62%, 26%, 1);
+  --color-2-darker: hsla(168, 62%, 16%, 1);
 
   --color-error           : hsla(359, 100%, 91%, 1);
   --color-success         : hsla(76, 69%, 68%, 1);
@@ -173,12 +173,6 @@ const GlobalStyle = createGlobalStyle`
   margin-right: calc(var(--gutter) * -1);
 }
 
-.column {
-  display: block;
-  flex: 1 1 0%;
-  padding: 0 var(--gutter);
-}
-
 @media screen and (max-width: 600px) {
   .row {
     width: 100%;
@@ -225,7 +219,7 @@ const GlobalStyle = createGlobalStyle`
 }
 
 .lg-6 {
-    flex: none;
+    flex: none !important;
     width: 50%;
 }
 
@@ -406,7 +400,24 @@ const GlobalStyle = createGlobalStyle`
     letter-spacing: -0.01em;
   }
 
-
+  input,
+  textarea,
+  select,
+  pre,
+  blockquote,
+  figure,
+  figcaption,
+  table,
+  p,
+  ul,
+  ol,
+  dl,
+  form,
+  img,
+  .video-container,
+  .ss-custom-select {
+    margin-bottom : var(--vspace-1);
+  }
 
   @media screen and (max-width: 500px) {
     h1, .h1 {

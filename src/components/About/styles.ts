@@ -140,6 +140,98 @@ export const Container = styled.section`
     color: var(--color-text-dark);
   }
 
+  .about-expertise {
+    padding-top: calc(6 * var(--space));
+  }
+
+  .about-expertise .skills-list {
+    list-style: none;
+    margin-top: var(--vspace-1);
+    margin-left: 0;
+  }
+
+  .about-expertise .skills-list li {
+    display: inline-block;
+    padding: 0;
+  }
+
+  .about-expertise .skills-list li:not(:first-child)::before {
+    content: ', ';
+  }
+
+  .about-timelines {
+    --timeline-left-padding: var(--vspace-1_75);
+    --timeline-top-adjust: var(--vspace-0_5);
+    padding-top: var(--vspace-3);
+  }
+
+  .about-timelines .text-pretitle {
+    margin-left: var(--timeline-left-padding);
+  }
+
+  .timeline {
+    margin-top: var(--vspace-1_25);
+    padding-top: 1vw;
+    position: relative;
+  }
+
+  .timeline::before {
+    content: '';
+    display: block;
+    width: 1px;
+    height: calc(100% - var(--timeline-top-adjust));
+    background-color: var(--color-border);
+    position: absolute;
+    top: var(--timeline-top-adjust);
+    left: 3px;
+  }
+
+  .timeline__block {
+    padding-left: var(--timeline-left-padding);
+    padding-bottom: var(--vspace-0_5);
+    position: relative;
+  }
+
+  .timeline__block:last-child {
+    padding-bottom: 0;
+  }
+
+  .timeline__bullet {
+    display: block;
+    height: 8px;
+    width: 8px;
+    border-radius: 50%;
+    background-color: var(--color-1);
+    position: absolute;
+    top: var(--timeline-top-adjust);
+    left: 0;
+  }
+
+  .timeline__title {
+    font-family: var(--font-1);
+    font-weight: 500;
+    font-size: var(--text-lg);
+    margin-top: 0;
+    margin-bottom: var(--vspace-0_125);
+  }
+
+  .timeline__meta {
+    font-family: var(--font-1);
+    font-weight: 300;
+    font-size: calc(var(--text-size) * 1.1053);
+    margin-top: 0;
+    margin-bottom: var(--vspace-0_125);
+  }
+
+  .timeline__timeframe {
+    font-size: var(--text-xs);
+    line-height: var(--vspace-0_75);
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    color: var(--color-text-light);
+    margin-top: -0.2rem;
+  }
+
   @media screen and (max-width: 400px) {
     .about-timelines {
       --timeline-left-padding: var(--vspace-1);
