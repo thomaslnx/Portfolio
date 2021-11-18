@@ -155,8 +155,9 @@ export const Container = styled.section`
     padding: 0;
   }
 
-  .about-expertise .skills-list li:not(:first-child)::before {
+  .about-expertise .skills-list li:not(:last-child)::after {
     content: ', ';
+    padding-right: 10px;
   }
 
   .about-timelines {
@@ -236,6 +237,18 @@ export const Container = styled.section`
     .about-timelines {
       --timeline-left-padding: var(--vspace-1);
     }
+
+    .about-timelines .column + .column {
+      margin-top: var(--vspace-1_5);
+    }
+
+    .column {
+      flex: none;
+      width: 100%;
+      margin-left: 0;
+      margin-right: 0;
+      padding: 0;
+    }
   }
 
   @media screen and (max-width: 600px) {
@@ -247,12 +260,24 @@ export const Container = styled.section`
       width: 100%;
     }
 
+    .about-timelines .column + .column {
+      margin-top: var(--vspace-1_5);
+    }
+
     .about-info .about-info__text {
       display: flex;
       flex-direction: column;
       padding: 0;
       margin: 3rem 0 0 0;
       width: 100%;
+    }
+
+    .column {
+      flex: none;
+      width: 100%;
+      margin-left: 0;
+      margin-right: 0;
+      padding: 0;
     }
   }
 
@@ -280,11 +305,27 @@ export const Container = styled.section`
     .about-timelines .column + .column {
       margin-top: var(--vspace-1_5);
     }
+
+    .column {
+      flex: none;
+      width: 100%;
+      margin-left: 0;
+      margin-right: 0;
+      padding: 0;
+    }
   }
 
   @media screen and (max-width: 1000px) {
     .about-timelines {
       --timeline-left-padding: var(--vspace-1_25);
+    }
+
+    .column {
+      flex: none;
+      width: 100%;
+      margin-left: 0;
+      margin-right: 0;
+      padding: 0;
     }
   }
 
