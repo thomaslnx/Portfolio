@@ -27,7 +27,7 @@ const pageScroll = (elements: NodeListOf<HTMLElement>) => {
   };
 
   /**
-   * O scroll só funcionou por que alterei o apontamento do objeto window do qual ele
+   * O scroll só funcionou por que alterei o apontamento do objeto window para 'globalThis' do qual ele
    * pega o container dentro la lib.
    */
 

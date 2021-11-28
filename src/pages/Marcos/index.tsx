@@ -6,10 +6,12 @@ import Circles from '@components/Circles';
 import Header from '@components/Header';
 import Intro from '@components/Intro';
 import About from '@components/About';
+import Works from '@components/Works';
 
 import pageScroll from '@utils/pageScroll';
 import scrollSpy from '@utils/scrollSpy';
 import viewAnimate from '@utils/viewAnimate';
+import worksLightbox from '@src/utils/worksModal';
 
 import { PageContent, MainContent } from './styles';
 
@@ -25,6 +27,7 @@ const Marcos: React.FC = (): JSX.Element => {
   const [siteBody, setSiteBody] = useState<HTMLBodyElement | null>();
   const [menuIsClicked, setMenuIsClicked] = useState<boolean>(false);
   const [menuIsOpen, setMenuIsOpen] = useState<boolean | undefined>(false);
+  const [worksModals, setWorksModals] = useState<NodeListOf<HTMLElement>>();
 
   useEffect(() => {
     setHtmlTargets(window.document.querySelectorAll('.target-section'));
@@ -32,6 +35,7 @@ const Marcos: React.FC = (): JSX.Element => {
     setToggleButton(window.document.querySelector('.mobile-menu-toggle'));
     setMainNavWrap(window.document.querySelector('.main-nav-wrap'));
     setSiteBody(window.document.querySelector('body'));
+    setWorksModals(window.document.querySelectorAll('.folio-list__item-link'));
 
     const sectionBlocks: NodeListOf<HTMLElement> =
       window.document.querySelectorAll('[data-animate-block]');
@@ -131,6 +135,7 @@ const Marcos: React.FC = (): JSX.Element => {
   useEffect(() => {
     htmlTargets !== undefined && scrollSpy(htmlTargets);
     trigger !== undefined && pageScroll(trigger);
+    worksModals !== undefined && worksLightbox(worksModals);
 
     const menuClickedEventListener = (event: Event) => {
       event.preventDefault();
@@ -180,6 +185,7 @@ const Marcos: React.FC = (): JSX.Element => {
     toggleButton,
     mainNavWrap,
     siteBody,
+    worksModals,
   ]);
 
   return (
@@ -191,6 +197,7 @@ const Marcos: React.FC = (): JSX.Element => {
         <MainContent className="s-content">
           <Intro />
           <About />
+          <Works />
         </MainContent>
       </PageContent>
     </>

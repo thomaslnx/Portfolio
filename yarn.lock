@@ -1228,6 +1228,11 @@
   resolved "https://registry.yarnpkg.com/@types/animejs/-/animejs-3.1.4.tgz#92f90d1c800b9041b64a7da9da0e68e690146b0e"
   integrity sha512-WUjeFT2SXd6intfE6cg6eL1jk/JL88JqM2gC4WqO4iHLmbCvHUq6aoLK13lGpDWs4FtS2PHoYraJZ0dEx99Dyg==
 
+"@types/basiclightbox@^5.0.1":
+  version "5.0.1"
+  resolved "https://registry.yarnpkg.com/@types/basiclightbox/-/basiclightbox-5.0.1.tgz#59f3a38015246c9c0e87dfc4aaddd49ac4b79ad8"
+  integrity sha512-77kVrFQyD76bD6uMlYiAAUjZkbO0YrOWT/fYYxHzFtR+CQ32jVhwClCkIbkQJ81uYFaBgJZhyzxKIrd8s85B3A==
+
 "@types/hoist-non-react-statics@*":
   version "3.3.1"
   resolved "https://registry.yarnpkg.com/@types/hoist-non-react-statics/-/hoist-non-react-statics-3.3.1.tgz#1124aafe5118cb591977aeb1ceaaed1070eb039f"
@@ -1722,6 +1727,11 @@ base@^0.11.1:
     isobject "^3.0.1"
     mixin-deep "^1.2.0"
     pascalcase "^0.1.1"
+
+basiclightbox@^5.0.4:
+  version "5.0.4"
+  resolved "https://registry.yarnpkg.com/basiclightbox/-/basiclightbox-5.0.4.tgz#5367d6d468ae44406e51b8486cfb8751f36f1fb2"
+  integrity sha512-EsuNWmfcFXWZOe0txKXsllYOC7bDpoaVLc4HHHlYKB/roymlZs+FBdLUU6rx2yPpnJZhulwheKdPjqr2k0+NGQ==
 
 big.js@^5.2.2:
   version "5.2.2"
